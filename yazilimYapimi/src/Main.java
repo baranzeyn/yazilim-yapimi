@@ -20,13 +20,12 @@ public class Main {
 	public static void main(String[] args) {
 		ArrayList<Integer> sayilar2 = new ArrayList<Integer>();
 		Scanner scan = new Scanner(System.in);
-		int[] sayilar = new int[5];
 		int hedef = (int) (Math.random() * 100);
 		boolean isRun = true;
 		int sonuc = 0;
-		for (int i = 0; i < sayilar.length; i++) {
-			sayilar[i] = (int) (Math.random() * 10);
-			sayilar2.add(sayilar[i]);
+		for (int i = 0; i < 5; i++) {
+			int a= (int) (Math.random() * 10);
+			sayilar2.add(a);
 		}
 		System.out.println("hedef:" + hedef);
 
@@ -41,9 +40,10 @@ public class Main {
 			int sayi1 = sayilar2.get(secim1 - 1);
 			int sayi2 = sayilar2.get(secim2 - 1);
 			
-			//kullanılacak sayılar arrayliisten silinir
+			//kullanılacak sayılar arraylistten silinir
 			sayilar2.remove(secim1 - 1);
-			sayilar2.remove(secim2 - 1);
+			//üstteki işlem sonrası toplam index numaraları bir azalır.Çünkü toplam eleman sayısı azalır.
+			sayilar2.remove(secim2 - 2);
 			
 			System.out.println("Yapmak istediğininiz işlemi seçiniz\n1-Toplama\n2-Çıkarma\n3-çarpma\n4-Bölme");
 			int secim = scan.nextInt();
