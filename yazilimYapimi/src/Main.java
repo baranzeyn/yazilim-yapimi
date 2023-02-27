@@ -41,9 +41,15 @@ public class Main {
 			int sayi2 = sayilar2.get(secim2 - 1);
 			
 			//kullanılacak sayılar arraylistten silinir
-			sayilar2.remove(secim1 - 1);
-			//üstteki işlem sonrası toplam index numaraları bir azalır.Çünkü toplam eleman sayısı azalır.
-			sayilar2.remove(secim2 - 2);
+			sayilar2.remove(secim1 - 1);//**
+			
+			if(secim2-1==0) {
+				sayilar2.remove(secim2 - 1);//zaten seçilen elemanın indexi sıfırsa bu azalmadan index numarası olarak etkilenmez
+			}else {
+				//yıldızlı işlem sonrası toplam index numaraları  bir azalır.Çünkü toplam eleman sayısı azalır.
+				sayilar2.remove(secim2 - 2);
+			}
+			
 			
 			System.out.println("Yapmak istediğininiz işlemi seçiniz\n1-Toplama\n2-Çıkarma\n3-çarpma\n4-Bölme");
 			int secim = scan.nextInt();
